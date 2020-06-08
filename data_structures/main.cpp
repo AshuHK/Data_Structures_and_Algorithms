@@ -22,10 +22,16 @@ int main() {
     std::cout << stack << std::endl; 
   }
 
-  for(int i = 0; i < 10; i++) {
+  for(int i = 0; i < 8; i++) {
     stack.pop(); 
     std::cout << stack << std::endl; 
   }
+
+  stack.pop(); 
+  std::cout << stack << std::endl; 
+
+  stack.pop(); 
+  std::cout << stack << std::endl; 
 
 
   // std::cout << queue.get_size() << std::endl; 
