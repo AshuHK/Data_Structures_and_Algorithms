@@ -57,7 +57,6 @@ Type Stack<Type>::get_top() {
   return data[size - 1];
 }
 
-// TODO: FIX THIS
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, Stack<Type>& stack) {
   for (int i = stack.data.size() - 1; i >= 0; --i) {
