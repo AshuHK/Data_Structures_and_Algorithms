@@ -59,10 +59,24 @@ size_t Queue<Type>::get_size() {
 }
 
 template <typename Type>
-Type Queue<Type>::get_front() {}
+Type Queue<Type>::get_front() {
+  if (!is_empty()) {
+    return data[0]; 
+  } else {
+    std::cout << "ERROR: Queue is empty" << std::endl; 
+    exit(EXIT_FAILURE); 
+  }
+}
 
 template <typename Type>
-Type Queue<Type>::get_back() {}
+Type Queue<Type>::get_back() {
+  if (!is_empty()){
+    return data[size - 1]; 
+  } else {
+    std::cout << "ERROR: Queue is empty" << std::endl; 
+    exit(EXIT_FAILURE); 
+  }
+}
 
 template <typename Type>
 void Queue<Type>::enqueue(Type item) {
@@ -76,7 +90,16 @@ void Queue<Type>::enqueue(Type item) {
 }
 
 template <typename Type>
-Type Queue<Type>::dequeue() {}
+Type Queue<Type>::dequeue() {
+  if(!is_empty()){
+    std::reverse(data.begin(), data.end()); 
+    data.pop_back() 
+    std::reverse(data.begin(), data.end());
+  } else {
+    std::cout << "ERROR: Queue is empty" << std::endl; 
+    exit(EXIT_FAILURE); 
+  }
+}
 
 template <typename Type>
 bool Queue<Type>::is_empty() {

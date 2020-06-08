@@ -12,7 +12,7 @@ int main() {
 
   for (int i = 0; i < 10; i++) {
     queue.enqueue(i);
-    std::cout << queue << std::endl;
+    std::cout << queue << "Front: " << queue.get_front() << " Back: " << queue.get_back() << std::endl;
   }
 
   return 0;
