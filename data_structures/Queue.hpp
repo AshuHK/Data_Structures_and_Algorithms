@@ -30,7 +30,7 @@ class Queue {
 
   // main queue operations
   void enqueue(Type item);
-  Type dequeue(Type item);
+  Type dequeue();
 
   bool is_empty();
   bool is_full();
@@ -40,16 +40,42 @@ class Queue {
                                     const Queue<Type>& queue);
 };
 
-template <typename Type> 
-Queue<Type>::Queue(){
-  this->capacity = 10; 
-  this->size = 0; 
+template <typename Type>
+Queue<Type>::Queue() {
+  this->capacity = 10;
+  this->size = 0;
 }
 
-template <typename Type> 
+template <typename Type>
 Queue<Type>::Queue(unsigned int capacity) {
-  this->capacity = capacity; 
-  this->size = 0; 
+  this->capacity = capacity;
+  this->size = 0;
 }
 
+template <typename Type>
+size_t Queue<Type>::get_size() {
+  // return size;
+  return this->size;
+}
+
+template <typename Type>
+Type Queue<Type>::get_front() {}
+
+template <typename Type>
+Type Queue<Type>::get_back() {}
+
+template <typename Type>
+void Queue<Type>::enqueue(Type item) {}
+
+template <typename Type>
+Type Queue<Type>::dequeue() {}
+
+template <typename Type>
+bool Queue<Type>::is_empty() {}
+
+template <typename Type>
+bool Queue<Type>::is_full() {}
+
+template <typename Type>
+std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue) {}
 #endif
