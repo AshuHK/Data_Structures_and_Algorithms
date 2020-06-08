@@ -21,9 +21,9 @@ class Queue {
  public:
   // constructors
   Queue();
-  Queue(int capacity);
+  Queue(unsigned int capacity);
 
-  // setter and gettesr
+  // setter and getters
   size_t get_size();
   Type get_front();
   Type get_back();
@@ -39,5 +39,17 @@ class Queue {
   friend std::ostream& operator<<<>(std::ostream& output,
                                     const Queue<Type>& queue);
 };
+
+template <typename Type> 
+Queue<Type>::Queue(){
+  this->capacity = 10; 
+  this->size = 0; 
+}
+
+template <typename Type> 
+Queue<Type>::Queue(unsigned int capacity) {
+  this->capacity = capacity; 
+  this->size = 0; 
+}
 
 #endif
