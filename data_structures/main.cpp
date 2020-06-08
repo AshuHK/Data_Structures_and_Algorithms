@@ -17,6 +17,7 @@ int main() {
   std::cout << std::endl; 
 
   Stack<int> stack; 
+  std::cout << stack << std::endl; 
   for(int i = 0; i < 10; i++) {
     stack.push(i); 
     std::cout << stack << std::endl; 
