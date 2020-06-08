@@ -10,6 +10,12 @@ int main() {
     simp.push(i);
   }
   std::cout << simp << std::endl; 
+  std::cout << simp.get_size() << std::endl; 
+  std::cout << simp.get_top() << std::endl; 
 
+  simp.pop(); 
+  std::cout << simp << std::endl;
+  std::cout << simp.get_size() << std::endl; 
+  std::cout << simp.get_top() << std::endl; 
   return 0;
 }

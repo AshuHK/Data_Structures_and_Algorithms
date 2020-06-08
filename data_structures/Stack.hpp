@@ -2,7 +2,14 @@
 #include <vector>
 
 #ifndef STACK_HPP
-#define STACK_HPP 
+#define STACK_HPP
+
+// create a forward declaration of the class and operator<<
+template <typename Type>
+class Stack;
+
+template <typename Type>
+std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack);
 
 template <typename Type>
 class Stack {
@@ -22,6 +29,10 @@ class Stack {
   // stack operations
   void push(Type item);
   Type pop();
+
+  // overloading operators
+  friend std::ostream& operator<< <> (std::ostream& output,
+                                    const Stack<Type>& stack);
 };
 
 template <typename Type>
@@ -51,6 +62,21 @@ Type Stack<Type>::pop() {
 template <typename Type>
 Type Stack<Type>::get_top() {
   return data[size - 1];
+}
+
+template <typename Type> 
+std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack) {
+  output << "Stack: ["; 
+  for(int i = stack.size - 1; i >= 0; --i) {
+    // output << stack.data[i] << std::endl; 
+    if (i != 0){
+      output << stack.data[i] << ", "; 
+    } else {
+      output << stack.data[i] << "] "; 
+    }
+  }
+
+  return output; 
 }
 
 #endif
