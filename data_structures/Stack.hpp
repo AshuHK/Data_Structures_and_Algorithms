@@ -16,12 +16,12 @@ class Stack {
  private:
   std::vector<Type> data;
   size_t size = 0;
-  int capacity = 10; 
+  int capacity = 10;
 
  public:
   // constructors and destructors
   Stack() = default;
-  Stack(int capacity); 
+  Stack(int capacity);
   ~Stack();
 
   // setters and getters
@@ -31,17 +31,17 @@ class Stack {
   // stack operations
   void push(Type item);
   Type pop();
-  bool is_empty(); 
-  bool is_full(); 
+  bool is_empty();
+  bool is_full();
 
   // overloading operators
   friend std::ostream& operator<<<>(std::ostream& output,
                                     const Stack<Type>& stack);
 };
 
-template <typename Type> 
+template <typename Type>
 Stack<Type>::Stack(int capacity) {
-  this->capacity = capacity; 
+  this->capacity = capacity;
 }
 
 template <typename Type>
@@ -56,21 +56,46 @@ size_t Stack<Type>::get_size() {
 
 template <typename Type>
 void Stack<Type>::push(Type item) {
-  data.push_back(item);
-  size++;
+  if (!is_full()) {
+    data.push_back(item);
+    size++;
+  } else {
+    std::cout << "ERROR: Stack is full" << std::endl;
+    exit(EXIT_FAILURE);
+  }
 }
 
 template <typename Type>
 Type Stack<Type>::pop() {
-  Type old = data[size - 1];
-  data.pop_back();
-  size--;
-  return old;
+  if (!is_empty()) {
+    Type old = data[size - 1];
+    data.pop_back();
+    size--;
+    return old;
+  } else {
+    std::cout << "ERROR: Stack is empty" << std::endl;
+    exit(EXIT_FAILURE);
+  }
 }
 
 template <typename Type>
 Type Stack<Type>::get_top() {
-  return data[size - 1];
+  if(!is_empty()) {
+    return data[size - 1];
+  } else {
+    std::cout << "ERROR: Stack is empty" << std::endl; 
+    exit(EXIT_FAILURE); 
+  }
+}
+
+template <typename Type>
+bool Stack<Type>::is_empty() {
+  return size == 0;
+}
+
+template <typename Type>
+bool Stack<Type>::is_full() {
+  return size == capacity;
 }
 
 template <typename Type>
