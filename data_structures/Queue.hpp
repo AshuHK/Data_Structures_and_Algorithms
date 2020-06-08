@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm> 
 
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
@@ -71,10 +72,14 @@ template <typename Type>
 Type Queue<Type>::dequeue() {}
 
 template <typename Type>
-bool Queue<Type>::is_empty() {}
+bool Queue<Type>::is_empty() {
+  return size == 0; 
+}
 
 template <typename Type>
-bool Queue<Type>::is_full() {}
+bool Queue<Type>::is_full() {
+  return size == capacity; 
+}
 
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue) {}
