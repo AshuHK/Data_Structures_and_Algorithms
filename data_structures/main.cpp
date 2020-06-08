@@ -1,11 +1,13 @@
 #include <iostream>
+#include <string>
 #include <vector>
-#include <string> 
 
 #include "Queue.hpp"
 #include "Stack.hpp"
 
 int main() {
+
+  Queue queue; 
 
   return 0;
 }
