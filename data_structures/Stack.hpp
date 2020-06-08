@@ -11,6 +11,7 @@ class Stack;
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack);
 
+// complete definition
 template <typename Type>
 class Stack {
  private:
