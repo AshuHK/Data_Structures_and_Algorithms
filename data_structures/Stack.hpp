@@ -18,11 +18,11 @@ class Stack {
 
   // setters and getters
   size_t get_size();
+  Type get_top();
 
   // stack operations
   void push(Type item);
   Type pop();
-  Type peek_top();
 
   void cout_stack(); 
 
@@ -48,10 +48,17 @@ void Stack<Type>::push(Type item) {
 }
 
 template <typename Type>
-Type Stack<Type>::pop() {}
+Type Stack<Type>::pop() {
+  Type old = data[size - 1]; 
+  data.pop_back(); 
+  size--; 
+  return old; 
+}
 
 template <typename Type>
-Type Stack<Type>::peek_top() {}
+Type Stack<Type>::get_top() {
+  return data[size - 1]; 
+}
 
 // TODO: FIX THIS 
 // template <typename Type>
