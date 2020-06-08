@@ -1,6 +1,16 @@
 #include <iostream>
 #include <vector>
 
+#ifndef QUEUE_HPP 
+#define QUEUE_HPP
+
+template <typename Type> 
+class Queue; 
+
+template <typename Type> 
+std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue);
+
+
 template <typename Type>
 class Queue {
  private:
@@ -21,7 +31,9 @@ class Queue {
   // main queue operations 
   void enqueue(Type item);
   Type dequeue(Type item);
-  
+
   bool is_empty();
   bool is_full();
 };
+
+#endif
