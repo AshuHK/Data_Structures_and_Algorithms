@@ -31,6 +31,7 @@ class Stack {
   // stack operations
   void push(Type item);
   Type pop();
+
   bool is_empty();
   bool is_full();
 
