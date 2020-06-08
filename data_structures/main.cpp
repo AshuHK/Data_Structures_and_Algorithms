@@ -8,5 +8,7 @@ int main() {
 
   Stack<int> simp; 
 
+  std::cout << simp.get_size() << std::endl; 
+
   return 0;
 }

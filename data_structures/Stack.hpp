@@ -11,13 +11,39 @@ class Stack {
   size_t size;
 
  public:
+  // constructors and destructors
   Stack() = default;
   ~Stack();
+
+  // setters and getters
+  size_t get_size();
+
+  // stack operations
+  void push(Type item);
+  Type pop();
+  Type peek_top();
 };
 
 template <typename Type>
 Stack<Type>::~Stack() {
   std::cout << "The stack has been destroyed" << std::endl;
 }
+
+template <typename Type>
+size_t Stack<Type>::get_size() {
+  return size;
+}
+
+template <typename Type>
+void Stack<Type>::push(Type item) {
+  data.push_back(item);
+  size++;
+}
+
+template <typename Type>
+Type Stack<Type>::pop() {}
+
+template <typename Type>
+Type Stack<Type>::peek_top() {}
 
 #endif
