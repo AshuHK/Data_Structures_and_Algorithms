@@ -6,7 +6,7 @@
 #include "Stack.hpp"
 
 int main() {
-  Queue<int> queue;
+  Queue<int> queue(10);
 
   for (int i = 0; i < 10; i++) {
     std::cout << queue << std::endl;
@@ -20,22 +20,21 @@ int main() {
     std::cout << queue << std::endl;
   }
 
-  std::cout << std::endl; 
-  
-  Stack<int> stack; 
+  std::cout << std::endl;
+
+  Stack<int> stack(10);
 
   for (int i = 0; i < 10; i++) {
     std::cout << stack << std::endl;
-    stack.push(i); 
+    stack.push(i);
   }
 
   std::cout << stack << std::endl;
 
   for (int i = 0; i < 10; i++) {
-    stack.pop(); 
+    stack.pop();
     std::cout << stack << std::endl;
   }
-
 
   return 0;
 }
