@@ -2,7 +2,7 @@
 #ifndef STACK_HPP
 #define STACK_HPP
 
-template <typename Type> 
+template <typename Type>
 class Stack {
  private:
   std::vector<Type> data;
@@ -12,16 +12,14 @@ class Stack {
   Stack();
   ~Stack();
 
-  std::vector<Type> get_data(); 
-  void push(Type item); 
+  // std::vector<Type> get_data();
+  void push(Type item);
 };
-
-// Stack::Stack() {}
-// Stack::~Stack() {}
 
 template <typename Type>
 void Stack::push(Type item) {
-  data.push_back(item); 
+  data.push_back(item);
+  size++;
 }
 
 #endif
