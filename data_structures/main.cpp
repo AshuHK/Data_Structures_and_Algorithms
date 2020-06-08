@@ -7,7 +7,8 @@
 
 int main() {
 
-  Queue queue; 
+  Queue<int> queue; 
+  
 
   return 0;
 }

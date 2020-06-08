@@ -66,7 +66,15 @@ template <typename Type>
 Type Queue<Type>::get_back() {}
 
 template <typename Type>
-void Queue<Type>::enqueue(Type item) {}
+void Queue<Type>::enqueue(Type item) {
+  if (!is_full()) {
+    data.push_back(item); 
+    size++; 
+  } else {
+    std::cout << "ERROR: Queue is full" << std::endl; 
+    exit(EXIT_FAILURE); 
+  }
+}
 
 template <typename Type>
 Type Queue<Type>::dequeue() {}
