@@ -59,9 +59,11 @@ Type Stack<Type>::get_top() {
 
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, Stack<Type>& stack) {
+  output << "Stack: ["; 
   for (int i = stack.data.size() - 1; i >= 0; --i) {
     output << stack.data[i] << " ";
   }
+  output << "]"; 
   return output;
 }
 
