@@ -16,10 +16,12 @@ class Stack {
  private:
   std::vector<Type> data;
   size_t size = 0;
+  int capacity = 10; 
 
  public:
   // constructors and destructors
   Stack() = default;
+  Stack(int capacity); 
   ~Stack();
 
   // setters and getters
@@ -29,11 +31,18 @@ class Stack {
   // stack operations
   void push(Type item);
   Type pop();
+  bool is_empty(); 
+  bool is_full(); 
 
   // overloading operators
-  friend std::ostream& operator<< <> (std::ostream& output,
+  friend std::ostream& operator<<<>(std::ostream& output,
                                     const Stack<Type>& stack);
 };
+
+template <typename Type> 
+Stack<Type>::Stack(int capacity) {
+  this->capacity = capacity; 
+}
 
 template <typename Type>
 Stack<Type>::~Stack() {
@@ -64,19 +73,18 @@ Type Stack<Type>::get_top() {
   return data[size - 1];
 }
 
-template <typename Type> 
+template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack) {
-  output << "Stack: ["; 
-  for(int i = stack.size - 1; i >= 0; --i) {
-    // output << stack.data[i] << std::endl; 
-    if (i != 0){
-      output << stack.data[i] << ", "; 
+  output << "Stack: [";
+  for (int i = stack.size - 1; i >= 0; --i) {
+    if (i != 0) {
+      output << stack.data[i] << ", ";
     } else {
-      output << stack.data[i] << "] "; 
+      output << stack.data[i] << "] ";
     }
   }
 
-  return output; 
+  return output;
 }
 
 #endif
