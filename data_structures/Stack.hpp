@@ -23,7 +23,6 @@ class Stack {
   // constructors and destructors
   Stack();
   Stack(int capacity);
-  ~Stack();
 
   // setters and getters
   size_t get_size();
@@ -63,14 +62,6 @@ Stack<Type>::Stack(int capacity) {
     exit(EXIT_FAILURE);
   }
 }
-
-/**
- * Default destructor
- *  Note: Not really needed because STL and compiler handles garbage
- *        collection
- */
-template <typename Type>
-Stack<Type>::~Stack() {}
 
 /**
  * Returns the number of elements in the stack
