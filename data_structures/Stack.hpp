@@ -11,7 +11,7 @@ class Stack;
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack);
 
-// complete definition
+// complete definition of an array based stack
 template <typename Type>
 class Stack {
  private:
