@@ -92,9 +92,10 @@ void Queue<Type>::enqueue(Type item) {
 template <typename Type>
 Type Queue<Type>::dequeue() {
   if(!is_empty()){
-    std::reverse(data.begin(), data.end()); 
-    data.pop_back() 
-    std::reverse(data.begin(), data.end());
+    Type old = data[size - 1]; 
+    data.erase(data.begin()); 
+    size--; 
+    return old; 
   } else {
     std::cout << "ERROR: Queue is empty" << std::endl; 
     exit(EXIT_FAILURE); 
