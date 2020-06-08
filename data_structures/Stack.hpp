@@ -43,6 +43,8 @@ class Stack {
 /**
  * Default constructor for the stack
  *  Sets the capacity to a default value of 10
+ *
+ * @param None
  */
 template <typename Type>
 Stack<Type>::Stack() {
@@ -62,6 +64,8 @@ Stack<Type>::Stack(unsigned int capacity) {
 
 /**
  * Returns the number of elements in the stack
+ * @param None
+ *
  * @return - number of elements in the stack
  */
 template <typename Type>
@@ -72,6 +76,8 @@ size_t Stack<Type>::get_size() {
 /**
  * Pushes an element onto the stack
  * @param item - new item to put onto the stack
+ *
+ * @return - None
  */
 template <typename Type>
 void Stack<Type>::push(Type item) {
@@ -86,6 +92,8 @@ void Stack<Type>::push(Type item) {
 
 /**
  * Removes and returns the top element from the stack
+ * @param None
+ *
  * @return - the removed element from the stack
  */
 template <typename Type>
@@ -103,6 +111,8 @@ Type Stack<Type>::pop() {
 
 /**
  * Returns the top element from the stack
+ * @param None
+ *
  * @return - the top element in the stack
  */
 template <typename Type>
@@ -117,6 +127,8 @@ Type Stack<Type>::get_top() {
 
 /**
  * Returns if the stack is empty
+ * @param None
+ *
  * @return - boolean if the stack is empty
  */
 template <typename Type>
@@ -126,6 +138,8 @@ bool Stack<Type>::is_empty() {
 
 /**
  * Returns if the stack is full
+ * @param None
+ *
  * @return - boolean if the stack is full
  */
 template <typename Type>
