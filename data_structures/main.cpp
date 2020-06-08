@@ -2,6 +2,7 @@
 #include <vector>
 #include <string> 
 
+#include "Queue.hpp"
 #include "Stack.hpp"
 
 int main() {
