@@ -16,12 +16,12 @@ template <typename Type>
 class Stack {
  private:
   std::vector<Type> data;
-  size_t size = 0;
-  int capacity = 10;
+  size_t size;
+  int capacity;
 
  public:
   // constructors and destructors
-  Stack() = default;
+  Stack();
   Stack(int capacity);
   ~Stack();
 
@@ -40,9 +40,17 @@ class Stack {
                                     const Stack<Type>& stack);
 };
 
+template <typename Type> 
+Stack<Type>::Stack() {
+  this->capacity = 10; 
+  this->size = 0; 
+  std::cout << "Stack created with capacity of " << capacity << " elements" << std::endl; 
+}
+
 template <typename Type>
 Stack<Type>::Stack(int capacity) {
   this->capacity = capacity;
+  std::cout << "Stack created with capacity of " << capacity << " elements" << std::endl; 
 }
 
 template <typename Type>
