@@ -153,8 +153,8 @@ std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack) {
       }
     }
   }
-  output << "] ";
 
+  output << "] ";
   return output;
 }
 
