@@ -20,7 +20,7 @@ class Stack {
   unsigned int capacity;
 
  public:
-  // constructors and destructors
+  // constructors
   Stack();
   Stack(unsigned int capacity);
 
