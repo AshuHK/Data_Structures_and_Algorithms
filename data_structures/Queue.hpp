@@ -55,8 +55,7 @@ Queue<Type>::Queue(unsigned int capacity) {
 
 template <typename Type>
 size_t Queue<Type>::get_size() {
-  // return size;
-  return this->size;
+  return size;
 }
 
 template <typename Type>
