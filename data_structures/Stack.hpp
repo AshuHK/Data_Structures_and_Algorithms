@@ -9,7 +9,7 @@ template <typename Type>
 class Stack {
  private:
   std::vector<Type> data;
-  size_t size;
+  size_t size = 0;
 
  public:
   // constructors and destructors
@@ -24,8 +24,11 @@ class Stack {
   Type pop();
   Type peek_top();
 
+  void cout_stack(); 
+
   // operation overloads
-  friend std::ostream& operator<<(std::ostream& output, Stack<Type> stack);
+  // TODO: FIX THIS 
+  // friend std::ostream& operator<<(std::ostream& output, Stack<Type>& stack);
 };
 
 template <typename Type>
@@ -50,12 +53,22 @@ Type Stack<Type>::pop() {}
 template <typename Type>
 Type Stack<Type>::peek_top() {}
 
-template <typename Type>
-std::ostream& operator<<(std::ostream& output, Stack<Type>& stack) {
-  for (int i = stack.data.size() - 1; i >= 0; --i) {
-    output << stack.data[i] << std::endl;
+// TODO: FIX THIS 
+// template <typename Type>
+// std::ostream& operator<<(std::ostream& output, Stack<Type>& stack) {
+//   for (int i = stack.data.size() - 1; i >= 0; --i) {
+//     output << stack.data[i] << std::endl;
+//   }
+//   return output;
+// }
+
+
+template <typename Type> 
+void Stack<Type>::cout_stack(){
+  for(int i = size - 1; i >= 0; --i){
+    std::cout << data[i] << std::endl; 
   }
-  return output;
 }
+
 
 #endif
