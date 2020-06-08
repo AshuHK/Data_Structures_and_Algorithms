@@ -40,23 +40,20 @@ class Stack {
                                     const Stack<Type>& stack);
 };
 
-template <typename Type> 
+template <typename Type>
 Stack<Type>::Stack() {
-  this->capacity = 10; 
-  this->size = 0; 
-  std::cout << "Stack created with capacity of " << capacity << " elements" << std::endl; 
+  this->capacity = 10;
+  this->size = 0;
 }
 
 template <typename Type>
 Stack<Type>::Stack(int capacity) {
   this->capacity = capacity;
-  std::cout << "Stack created with capacity of " << capacity << " elements" << std::endl; 
+  this->size = 0;
 }
 
 template <typename Type>
-Stack<Type>::~Stack() {
-  std::cout << "The stack has been destroyed" << std::endl;
-}
+Stack<Type>::~Stack() {}
 
 template <typename Type>
 size_t Stack<Type>::get_size() {
@@ -89,11 +86,11 @@ Type Stack<Type>::pop() {
 
 template <typename Type>
 Type Stack<Type>::get_top() {
-  if(!is_empty()) {
+  if (!is_empty()) {
     return data[size - 1];
   } else {
-    std::cout << "ERROR: Stack is empty" << std::endl; 
-    exit(EXIT_FAILURE); 
+    std::cout << "ERROR: Stack is empty" << std::endl;
+    exit(EXIT_FAILURE);
   }
 }
 
