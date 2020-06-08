@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <ostream> 
 
 #ifndef STACK_HPP
 #define STACK_HPP
@@ -22,6 +23,9 @@ class Stack {
   void push(Type item);
   Type pop();
   Type peek_top();
+
+  // operation overloads 
+  std::ostream & operator<<(std::ostream & output, Stack<Type> stack); 
 };
 
 template <typename Type>
@@ -45,5 +49,13 @@ Type Stack<Type>::pop() {}
 
 template <typename Type>
 Type Stack<Type>::peek_top() {}
+
+template <typename Type> 
+std::ostream& operator<<(std::ostream & output, Stack<Type> stack) {
+  for(int i = stack.data.size() - 1; i > 0; i--){
+    output << data[i] << std::endl; 
+  }
+  return output; 
+}
 
 #endif
