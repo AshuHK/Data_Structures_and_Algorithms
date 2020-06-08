@@ -1,15 +1,15 @@
 #include <iostream>
 #include <vector>
 
-#ifndef QUEUE_HPP 
+#ifndef QUEUE_HPP
 #define QUEUE_HPP
 
-template <typename Type> 
-class Queue; 
+// create a forward declaration of the class and operator<<
+template <typename Type>
+class Queue;
 
-template <typename Type> 
+template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue);
-
 
 template <typename Type>
 class Queue {
@@ -28,12 +28,16 @@ class Queue {
   Type get_front();
   Type get_back();
 
-  // main queue operations 
+  // main queue operations
   void enqueue(Type item);
   Type dequeue(Type item);
 
   bool is_empty();
   bool is_full();
+
+  // overloading operators
+  friend std::ostream& operator<<<>(std::ostream& output,
+                                    const Queue<Type>& queue);
 };
 
 #endif
