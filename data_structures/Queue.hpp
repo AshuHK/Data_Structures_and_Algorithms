@@ -91,8 +91,8 @@ bool Queue<Type>::is_full() {
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue) {
   output << "Queue: [";
-  for (int i = queue.size - 1; i >= 0; --i) {
-    if (i != 0) {
+  for (int i = 0; i <= queue.size - 1; ++i) {
+    if (i != (queue.size - 1)) {
       output << queue.data[i] << ", ";
     } else {
       output << queue.data[i] << "] ";
