@@ -1,4 +1,6 @@
+#include <iostream>
 #include <vector>
+
 #ifndef STACK_HPP
 #define STACK_HPP
 
@@ -9,17 +11,22 @@ class Stack {
   size_t size = 0;
 
  public:
-  Stack();
-  ~Stack();
+  Stack() = default;
+  ~Stack() { std::cout << "The stack has been destroyed" << std::endl; }
 
-  // std::vector<Type> get_data();
-  void push(Type item);
+  size_t get_size() { return size; }
+
+  void push(Type item) {
+    data.push_back(item);
+    size++;
+  }
+
+  Type pop() {
+    Type old = data[size - 1];
+    data.pop_back();
+    size--;
+    return old;
+  }
 };
-
-template <typename Type>
-void Stack::push(Type item) {
-  data.push_back(item);
-  size++;
-}
 
 #endif
