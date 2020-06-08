@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm> 
 
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
@@ -67,11 +67,11 @@ Type Queue<Type>::get_back() {}
 template <typename Type>
 void Queue<Type>::enqueue(Type item) {
   if (!is_full()) {
-    data.push_back(item); 
-    size++; 
+    data.push_back(item);
+    size++;
   } else {
-    std::cout << "ERROR: Queue is full" << std::endl; 
-    exit(EXIT_FAILURE); 
+    std::cout << "ERROR: Queue is full" << std::endl;
+    exit(EXIT_FAILURE);
   }
 }
 
@@ -80,19 +80,26 @@ Type Queue<Type>::dequeue() {}
 
 template <typename Type>
 bool Queue<Type>::is_empty() {
-  return size == 0; 
+  return size == 0;
 }
 
 template <typename Type>
 bool Queue<Type>::is_full() {
-  return size == capacity; 
+  return size == capacity;
 }
 
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue) {
-  for(int i = 0; i < queue.size; i++) {
-    output << queue.data[i] << " "; 
+  output << "Queue: [";
+  for (int i = queue.size - 1; i >= 0; --i) {
+    if (i != 0) {
+      output << queue.data[i] << ", ";
+    } else {
+      output << queue.data[i] << "] ";
+    }
   }
-  return output; 
+
+  return output;
 }
+
 #endif

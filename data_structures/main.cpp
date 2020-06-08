@@ -10,9 +10,14 @@ int main() {
   Queue<int> queue; 
 
   std::cout << queue.get_size() << std::endl; 
-  queue.enqueue(1); 
-  queue.enqueue(2); 
+
+  for(int i = 0; i < 10; i++) {
+    queue.enqueue(i); 
+  }
+
   std::cout << queue.get_size() << std::endl; 
+
+  std::cout << queue << std::endl; 
 
   return 0;
 }
