@@ -142,19 +142,12 @@ bool Stack<Type>::is_full() {
  */
 template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack) {
-  output << "Stack: [";
+  output << "Stack: ";
 
-  if (stack.size != 0) {
-    for (int i = 0; i <= stack.size - 1; ++i) {
-      if (i != (stack.size - 1)) {
-        output << stack.data[i] << ", ";
-      } else {
-        output << stack.data[i];
-      }
-    }
+  for(Type item : stack.data) {
+    output << item << " "; 
   }
 
-  output << "] ";
   return output;
 }
 
