@@ -24,11 +24,8 @@ class Stack {
   void push(Type item);
   Type pop();
 
-  void cout_stack(); 
-
   // operation overloads
-  // TODO: FIX THIS 
-  // friend std::ostream& operator<<(std::ostream& output, Stack<Type>& stack);
+  friend std::ostream& operator<<(std::ostream& output, Stack<Type>& stack);
 };
 
 template <typename Type>
@@ -49,33 +46,24 @@ void Stack<Type>::push(Type item) {
 
 template <typename Type>
 Type Stack<Type>::pop() {
-  Type old = data[size - 1]; 
-  data.pop_back(); 
-  size--; 
-  return old; 
+  Type old = data[size - 1];
+  data.pop_back();
+  size--;
+  return old;
 }
 
 template <typename Type>
 Type Stack<Type>::get_top() {
-  return data[size - 1]; 
+  return data[size - 1];
 }
 
-// TODO: FIX THIS 
-// template <typename Type>
-// std::ostream& operator<<(std::ostream& output, Stack<Type>& stack) {
-//   for (int i = stack.data.size() - 1; i >= 0; --i) {
-//     output << stack.data[i] << std::endl;
-//   }
-//   return output;
-// }
-
-
-template <typename Type> 
-void Stack<Type>::cout_stack(){
-  for(int i = size - 1; i >= 0; --i){
-    std::cout << data[i] << std::endl; 
+// TODO: FIX THIS
+template <typename Type>
+std::ostream& operator<<(std::ostream& output, Stack<Type>& stack) {
+  for (int i = stack.data.size() - 1; i >= 0; --i) {
+    output << stack.data[i] << " ";
   }
+  return output;
 }
-
 
 #endif

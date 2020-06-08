@@ -10,12 +10,14 @@ int main() {
     simp.push(i);
   }
 
-  simp.cout_stack();
+  // simp.cout_stack();
+  std::cout << simp << std::endl; 
 
   std::cout << std::endl << simp.pop() << std::endl;
   std::cout << simp.pop() << std::endl;
   std::cout << simp.pop() << std::endl << std::endl; 
-  simp.cout_stack();
+  // simp.cout_stack();
+  std::cout << simp << std::endl; 
 
   std::cout << std::endl << simp.get_size() << std::endl;
   std::cout << simp.get_top() << std::endl; 
