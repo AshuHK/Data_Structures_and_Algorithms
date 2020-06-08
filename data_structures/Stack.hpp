@@ -17,12 +17,12 @@ class Stack {
  private:
   std::vector<Type> data;
   size_t size;
-  int capacity;
+  unsigned int capacity;
 
  public:
   // constructors and destructors
   Stack();
-  Stack(int capacity);
+  Stack(unsigned int capacity);
 
   // setters and getters
   size_t get_size();
@@ -54,13 +54,9 @@ Stack<Type>::Stack() {
  * @param capacity - max capacity of the stack
  */
 template <typename Type>
-Stack<Type>::Stack(int capacity) {
-  if (capacity > 0) {
-    this->capacity = capacity;
-    this->size = 0;
-  } else {
-    exit(EXIT_FAILURE);
-  }
+Stack<Type>::Stack(unsigned int capacity) {
+  this->capacity = capacity;
+  this->size = 0;
 }
 
 /**
