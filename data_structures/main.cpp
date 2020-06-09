@@ -74,13 +74,13 @@ int main() {
 
   std::cout << list.get_size() << std::endl;
   std::cout << *(list.get_head()) << std::endl;
-  std::cout << list << std::endl;
 
   LinkedNode<std::string, int>* node = list.search("Ashu");
-  node->value = -69696;
-  node->key = "The GOAT";
+  std::cout << *node << std::endl; 
 
-  std::cout << list << std::endl;
+  // finish these two functions 
+  list.remove_back(); 
+  list.remove_front(); 
 
   return 0;
 }
