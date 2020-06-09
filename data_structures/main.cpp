@@ -68,8 +68,8 @@ int main() {
 
   LinkedList<std::string, int> list;
 
-  // std::cout << list.get_size() << std::endl; 
-  // std::cout << list.get_head() << std::endl; 
+  std::cout << list.get_size() << std::endl; 
+  std::cout << list.get_head() << std::endl; 
 
   return 0;
 }

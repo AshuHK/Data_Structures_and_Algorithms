@@ -82,12 +82,12 @@ std::ostream& operator<<(std::ostream& output,
 template <typename Type1, typename Type2>
 class LinkedList {
  private:
-  LinkedNode<Type1, Type2>* head = nullptr;
-  size_t size = 0;
+  LinkedNode<Type1, Type2>* head = nullptr; 
+  size_t size = 0; 
 
  public:
   // constructors
-  LinkedList() = default;
+  LinkedList() = default; 
   LinkedList(std::vector<LinkedNode<Type1, Type2>> nodes);
 
   // setters and getters
@@ -120,6 +120,16 @@ LinkedList<Type1, Type2>::LinkedList(
   for (const LinkedNode<Type1, Type2>& node : nodes) {
     add_back(node.key, node.value);
   }
+}
+
+template <typename Type1, typename Type2> 
+size_t LinkedList<Type1, Type2>::get_size() {
+  return size; 
+}
+
+template <typename Type1, typename Type2> 
+LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::get_head() {
+  return head; 
 }
 
 #endif
