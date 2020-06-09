@@ -77,17 +77,17 @@ class LinkedList;
 
 template <typename Type1, typename Type2>
 std::ostream& operator<<(std::ostream& output,
-                         const LinkedList<Type1, Type2> list);
+                         const LinkedList<Type1, Type2>& list);
 
 template <typename Type1, typename Type2>
 class LinkedList {
  private:
-  LinkedNode<Type1, Type2>* head;
-  size_t size;
+  LinkedNode<Type1, Type2>* head = nullptr;
+  size_t size = 0;
 
  public:
   // constructors
-  LinkedList();
+  LinkedList() = default;
   LinkedList(std::vector<LinkedNode<Type1, Type2>> nodes);
 
   // setters and getters
@@ -111,16 +111,6 @@ class LinkedList {
 };
 
 /**
- * Default constructor that sets the head to null and size to zero
- * @param None
- */
-template <typename Type1, typename Type2>
-LinkedList<Type1, Type2>::LinkedList() {
-  this->head = nullptr;
-  this->size = 0;
-}
-
-/**
  * Constructor that takes a vector of nodes and converts it into a linked list
  * @param nodes - a vector of nodes to be added to the linked list
  */
@@ -130,21 +120,6 @@ LinkedList<Type1, Type2>::LinkedList(
   for (const LinkedNode<Type1, Type2>& node : nodes) {
     add_back(node.key, node.value);
   }
-}
-
-/**
- * Returns the number of nodes in the linked list
- * @param None
- * @return - number of elements in the linked list
- */
-template <typename Type1, typename Type2>
-size_t LinkedList<Type1, Type2>::get_size() {
-  return size;
-}
-
-template <typename Type1, typename Type2>
-LinkedNode<Type1, Type2>* get_head() {
-  return this->head; 
 }
 
 #endif
