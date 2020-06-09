@@ -105,7 +105,7 @@ class LinkedList {
   LinkedNode<Type1, Type2> remove_front();
   LinkedNode<Type1, Type2> remove_back();
 
-  void update_value(Type1 key);
+  void update_value(Type1 key, Type2 value);
   void update_key(Type1 key, Type2 value);
 
   // overloaded operations
