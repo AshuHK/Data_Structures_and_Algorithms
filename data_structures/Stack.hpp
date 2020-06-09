@@ -158,7 +158,7 @@ template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Stack<Type>& stack) {
   output << "Stack: ";
 
-  for (Type item : stack.data) {
+  for (const Type& item : stack.data) {
     output << item << " ";
   }
 

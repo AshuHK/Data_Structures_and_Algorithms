@@ -44,7 +44,7 @@ class Queue {
 /**
  * Default constructor for the queue
  *  Sets the capacity to a default value of 10
- * @param None 
+ * @param None
  */
 template <typename Type>
 Queue<Type>::Queue() {
@@ -64,8 +64,8 @@ Queue<Type>::Queue(unsigned int capacity) {
 
 /**
  * Returns the number of elements in the queue
- * @param None 
- * 
+ * @param None
+ *
  * @return - the number of elements in the queue
  */
 template <typename Type>
@@ -75,8 +75,8 @@ size_t Queue<Type>::get_size() {
 
 /**
  * Returns the front of the queue
- * @param None 
- * 
+ * @param None
+ *
  * @return - the front element in the queue
  */
 template <typename Type>
@@ -91,8 +91,8 @@ Type Queue<Type>::get_front() {
 
 /**
  * Returns the back element in the queue
- * @param None 
- * 
+ * @param None
+ *
  * @return - the back element in the queue
  */
 template <typename Type>
@@ -108,8 +108,8 @@ Type Queue<Type>::get_back() {
 /**
  * Places an element into the queue
  * @param item - the new item to be pushed onto the queue
- * 
- * @return None 
+ *
+ * @return None
  */
 template <typename Type>
 void Queue<Type>::enqueue(Type item) {
@@ -124,8 +124,8 @@ void Queue<Type>::enqueue(Type item) {
 
 /**
  * Removes and returns the back element in the queue
- * @param None 
- * 
+ * @param None
+ *
  * @return - the removed element in the queue
  */
 template <typename Type>
@@ -143,8 +143,8 @@ Type Queue<Type>::dequeue() {
 
 /**
  * Returns if the queue is empty
- * @param None 
- * 
+ * @param None
+ *
  * @return - boolean if the queue is empty
  */
 template <typename Type>
@@ -154,8 +154,8 @@ bool Queue<Type>::is_empty() {
 
 /**
  * Return if the queue is full
- * @param None 
- * 
+ * @param None
+ *
  * @return - boolean if the queue is full
  */
 template <typename Type>
@@ -174,7 +174,7 @@ template <typename Type>
 std::ostream& operator<<(std::ostream& output, const Queue<Type>& queue) {
   output << "Queue: ";
 
-  for (Type item : queue.data) {
+  for (const Type& item : queue.data) {
     output << item << " ";
   }
 
