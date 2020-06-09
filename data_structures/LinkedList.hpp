@@ -106,7 +106,7 @@ class LinkedList {
   LinkedNode<Type1, Type2> remove_back();
 
   void update_value(Type1 key);
-  void update_key(Type1 key, Type2 value); 
+  void update_key(Type1 key, Type2 value);
 
   // overloaded operations
   friend std::ostream& operator<<<>(std::ostream& output,
@@ -204,7 +204,11 @@ LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
 }
 
 /**
+ * Overloads the << operator and puts the linked list into the output stream
+ * @param output - a reference to an output stream
+ * @param list - a constant reference to a linked list
  *
+ * @return output - the referenced output stream
  */
 template <typename Type1, typename Type2>
 std::ostream& operator<<(std::ostream& output,
