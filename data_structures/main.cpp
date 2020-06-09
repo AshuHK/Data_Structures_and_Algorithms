@@ -67,9 +67,11 @@ int main() {
   // test_linkednode();
 
   LinkedList<std::string, int> list;
+  list.add_back("Ashu", 5423); 
+  list.add_back("Dev", 9875); 
 
   std::cout << list.get_size() << std::endl; 
   std::cout << list.get_head() << std::endl; 
-
+  std::cout << list << std::endl; 
   return 0;
 }
