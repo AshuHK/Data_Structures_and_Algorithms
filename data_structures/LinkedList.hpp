@@ -146,6 +146,13 @@ LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::get_head() {
   return head;
 }
 
+/**
+ * Adds a new node at the end of the linked list
+ * @param key - sets the key for the new node
+ * @param value - sets the value for the new node
+ *
+ * @return - None
+ */
 template <typename Type1, typename Type2>
 void LinkedList<Type1, Type2>::add_back(Type1 key, Type2 value) {
   LinkedNode<Type1, Type2>* new_node = new LinkedNode(key, value);
@@ -163,6 +170,13 @@ void LinkedList<Type1, Type2>::add_back(Type1 key, Type2 value) {
   }
 }
 
+/**
+ * Adds a new node at the front of the linked list
+ * @param key - sets the key for the new node
+ * @param value - sets the value for the new node
+ *
+ * @return - None
+ */
 template <typename Type1, typename Type2>
 void LinkedList<Type1, Type2>::add_front(Type1 key, Type2 value) {
   LinkedNode<Type1, Type2>* new_node = new LinkedNode(key, value);
@@ -177,6 +191,20 @@ void LinkedList<Type1, Type2>::add_front(Type1 key, Type2 value) {
   }
 }
 
+template <typename Type1, typename Type2>
+LinkedNode<Type1, Type2>& LinkedList<Type1, Type2>::search(Type1 key) {
+  for (LinkedNode<Type1, Type2>* iterator = head; iterator != nullptr;
+       iterator = iterator->next) {
+    if (iterator->key == key) {
+      return iterator;
+    }
+  }
+  return nullptr;
+}
+
+/**
+ *
+ */
 template <typename Type1, typename Type2>
 std::ostream& operator<<(std::ostream& output,
                          const LinkedList<Type1, Type2>& list) {
