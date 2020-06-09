@@ -69,9 +69,11 @@ int main() {
   LinkedList<std::string, int> list;
   list.add_back("Ashu", 5423); 
   list.add_back("Dev", 9875); 
+  list.add_front("Dad", 5555); 
+  list.add_front("Mom", -1111); 
 
   std::cout << list.get_size() << std::endl; 
-  std::cout << list.get_head() << std::endl; 
+  std::cout << *(list.get_head()) << std::endl; 
   std::cout << list << std::endl; 
   return 0;
 }

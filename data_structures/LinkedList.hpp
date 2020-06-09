@@ -152,12 +152,27 @@ void LinkedList<Type1, Type2>::add_back(Type1 key, Type2 value) {
 
   if (head == nullptr) {
     head = new_node;
+    size++;
   } else {
     LinkedNode<Type1, Type2>* iterator = head;
     while (iterator->next != nullptr) {
       iterator = iterator->next;
     }
     iterator->next = new_node;
+    size++;
+  }
+}
+
+template <typename Type1, typename Type2>
+void LinkedList<Type1, Type2>::add_front(Type1 key, Type2 value) {
+  LinkedNode<Type1, Type2>* new_node = new LinkedNode(key, value);
+
+  if (head == nullptr) {
+    head = new_node;
+    size++;
+  } else {
+    new_node->next = head;
+    head = new_node;
     size++;
   }
 }
@@ -170,7 +185,7 @@ std::ostream& operator<<(std::ostream& output,
   for (LinkedNode<Type1, Type2>* iterator = list.head; iterator != nullptr;
        iterator = iterator->next) {
     if (iterator->next != nullptr) {
-      output << (*iterator) <<  " -> ";
+      output << (*iterator) << " -> ";
     } else {
       output << (*iterator);
     }
