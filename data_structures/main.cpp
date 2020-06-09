@@ -1,3 +1,4 @@
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -38,25 +39,34 @@ void test_stack() {
   }
 }
 
+void test_linkednode() {
+  LinkedNode<std::string, int> node1;
+  node1.key = "Ashu";
+  node1.value = 5555;
+
+  LinkedNode<std::string, int> node2;
+  node2.key = "Ashu";
+  node2.value = 5555;
+
+  LinkedNode<double, char> node3;
+  node3.key = 1.555;
+  node3.value = 'C';
+
+  LinkedNode<double, char> node4(1.555, 'C');
+
+  std::cout << std::boolalpha << (node1 == node2) << std::endl;
+  std::cout << std::boolalpha << (node3 == node4) << std::endl;
+
+  std::cout << node1 << std::endl;
+  std::cout << node1.key << " " << node1.value << std::endl;
+}
+
 int main() {
   // test_queue();
   // test_stack();
+  // test_linkednode();
 
-  LinkedNode<std::string, int> node1; 
-  node1.key = "Ashu";
-  node1.value = 5555; 
+  LinkedList<std::string, int> list;
 
-  LinkedNode<std::string, int> node2; 
-  node2.key = "Ashu"; 
-  node2.value = 5555; 
-
-  LinkedNode<double, char> node3; 
-  node3.key = 1.555; 
-  node3.value = 'C'; 
-
-  LinkedNode<double, char> node4(1.555, 'C'); 
-
-  std::cout << (node1 == node2) << std::endl; 
-  std::cout << (node3 == node4) << std::endl; 
   return 0;
 }
