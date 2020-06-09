@@ -30,9 +30,9 @@ struct LinkedNode {
 };
 
 /**
- * Constructor that takes in a key and value pair for the LinkedNode 
- * @param key - key for the node 
- * @param value - value for the node 
+ * Constructor that takes in a key and value pair for the LinkedNode
+ * @param key - key for the node
+ * @param value - value for the node
  */
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2>::LinkedNode(Type1 key, Type2 value) {
@@ -40,12 +40,12 @@ LinkedNode<Type1, Type2>::LinkedNode(Type1 key, Type2 value) {
   this->value = value;
 }
 
-/** 
+/**
  * Overloaded the output stream operator by placing node into output stream
  * @param output - a reference to an output stream
  * @param node - a constant reference to a node to be placed into the stream
- * 
- * @return - the reference output stream taken as a parameter 
+ *
+ * @return - the reference output stream taken as a parameter
  */
 template <typename Type1, typename Type2>
 std::ostream& operator<<(std::ostream& output,
@@ -55,10 +55,10 @@ std::ostream& operator<<(std::ostream& output,
 }
 
 /**
- * Overloaded the equivelance operator by comparing the key and value 
+ * Overloaded the equivelance operator by comparing the key and value
  * @param node - a constant reference to a node to be compared to
- * 
- * @return - boolean if the nodes are equal 
+ *
+ * @return - boolean if the nodes are equal
  */
 template <typename Type1, typename Type2>
 bool LinkedNode<Type1, Type2>::operator==(
@@ -82,13 +82,13 @@ std::ostream& operator<<(std::ostream& output,
 template <typename Type1, typename Type2>
 class LinkedList {
  private:
-  LinkedNode<Type1, Type2>* head = nullptr; 
+  LinkedNode<Type1, Type2>* head = nullptr;
   size_t size = 0;
 
  public:
   // constructors
   LinkedList() = default;
-  LinkedList(std::vector < LinkedNode<Type1, Type2> nodes);
+  LinkedList(std::vector<LinkedNode<Type1, Type2>> nodes);
 
   // setters and getters
   size_t get_size();
