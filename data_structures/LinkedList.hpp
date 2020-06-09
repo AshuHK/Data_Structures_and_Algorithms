@@ -58,13 +58,24 @@ class LinkedList {
     size_t size = 0; 
 
   public: 
+    // constructors 
     LinkedList() = default; 
     LinkedList(std::vector<LinkedNode<Type1, Type2> nodes);  
 
+    // setters and getters 
     size_t get_size(); 
     LinkedNode<Type1, Type2> * get_head(); 
 
+    // Linked List operations
     void add_back(Type1 key, Type2 value); 
+    void add_front(Type1 key, Type2 value); 
+
+    LinkedNode<Type1, Type2> & search(Type1 key); 
+
+    LinkedNode<Type1, Type2> remove_front(); 
+    LinkedNode<Type1, Type2> remove_back(); 
+    
+    void update_value(Type1 key); 
 
 }; 
 
