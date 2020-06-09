@@ -100,12 +100,13 @@ class LinkedList {
   void add_back(Type1 key, Type2 value);
   void add_front(Type1 key, Type2 value);
 
-  LinkedNode<Type1, Type2>& search(Type1 key);
+  LinkedNode<Type1, Type2>* search(Type1 key);
 
   LinkedNode<Type1, Type2> remove_front();
   LinkedNode<Type1, Type2> remove_back();
 
   void update_value(Type1 key);
+  void update_key(Type1 key, Type2 value); 
 
   // overloaded operations
   friend std::ostream& operator<<<>(std::ostream& output,
@@ -192,7 +193,7 @@ void LinkedList<Type1, Type2>::add_front(Type1 key, Type2 value) {
 }
 
 template <typename Type1, typename Type2>
-LinkedNode<Type1, Type2>& LinkedList<Type1, Type2>::search(Type1 key) {
+LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
   for (LinkedNode<Type1, Type2>* iterator = head; iterator != nullptr;
        iterator = iterator->next) {
     if (iterator->key == key) {

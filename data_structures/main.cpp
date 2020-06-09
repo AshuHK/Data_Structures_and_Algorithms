@@ -75,5 +75,12 @@ int main() {
   std::cout << list.get_size() << std::endl; 
   std::cout << *(list.get_head()) << std::endl; 
   std::cout << list << std::endl; 
+
+  auto node = list.search("Ashu"); 
+  node->value = -69696; 
+  node->key = "The GOAT"; 
+
+  std::cout << list << std::endl; 
+
   return 0;
 }
