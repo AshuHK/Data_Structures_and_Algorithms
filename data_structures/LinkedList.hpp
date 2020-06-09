@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <sstream> 
+#include <string> 
 
 #ifndef LINKEDLIST_HPP
 #define LINKEDLIST_HPP
@@ -142,6 +144,23 @@ size_t LinkedList<Type1, Type2>::get_size() {
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::get_head() {
   return head;
+}
+
+template <typename Type1, typename Type2> 
+std::ostream& operator<<(std::ostream& output, const LinkedList<Type1, Type2>& list) {
+
+  output<< "Linked List: ["; 
+
+  for(LinkedNode<Type1, Type2> * iterator = list.head; iterator != nullptr; iterator = iterator->next) {
+    if(iterator->next != nullptr) {
+      output << "(" << (*iterator) << ")" << ", "; 
+    } else {
+      output << "(" << (*iterator) << ")"; 
+    }
+  } 
+
+  output << "]"
+  return output; 
 }
 
 #endif
