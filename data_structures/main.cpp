@@ -5,7 +5,7 @@
 #include "Queue.hpp"
 #include "Stack.hpp"
 
-int main() {
+void test_queue() {
   Queue<int> queue(10);
 
   for (int i = 0; i < 10; i++) {
@@ -19,9 +19,9 @@ int main() {
     queue.dequeue();
     std::cout << queue << std::endl;
   }
+}
 
-  std::cout << std::endl;
-
+void test_stack() {
   Stack<int> stack(10);
 
   for (int i = 0; i < 10; i++) {
@@ -35,6 +35,10 @@ int main() {
     stack.pop();
     std::cout << stack << std::endl;
   }
+}
 
+int main() {
+  test_queue(); 
+  test_stack(); 
   return 0;
 }
