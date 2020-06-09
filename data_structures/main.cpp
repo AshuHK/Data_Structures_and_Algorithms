@@ -76,7 +76,7 @@ int main() {
   std::cout << *(list.get_head()) << std::endl;
   std::cout << list << std::endl;
 
-  auto node = list.search("Ashu");
+  LinkedNode<std::string, int>* node = list.search("Ashu");
   node->value = -69696;
   node->key = "The GOAT";
 
