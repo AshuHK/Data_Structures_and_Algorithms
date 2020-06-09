@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 
+#include "LinkedList.hpp"
 #include "Queue.hpp"
 #include "Stack.hpp"
 
@@ -38,7 +39,24 @@ void test_stack() {
 }
 
 int main() {
-  test_queue(); 
-  test_stack(); 
+  // test_queue();
+  // test_stack();
+
+  LinkedNode<std::string, int> node1; 
+  node1.key = "Ashu";
+  node1.value = 5555; 
+
+  LinkedNode<std::string, int> node2; 
+  node2.key = "Ashu"; 
+  node2.value = 5555; 
+
+  LinkedNode<double, char> node3; 
+  node3.key = 1.555; 
+  node3.value = 'C'; 
+
+  LinkedNode<double, char> node4(1.555, 'C'); 
+
+  std::cout << (node1 == node2) << std::endl; 
+  std::cout << (node3 == node4) << std::endl; 
   return 0;
 }
