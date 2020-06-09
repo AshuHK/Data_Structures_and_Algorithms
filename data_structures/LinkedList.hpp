@@ -4,7 +4,7 @@
 #ifndef LINKEDLIST_HPP
 #define LINKEDLIST_HPP
 
-// forward declaraction of the linked list node and output stream function
+// forward declaraction of the linked list node and output operator
 template <typename Type1, typename Type2>
 struct LinkedNode;
 
@@ -15,25 +15,38 @@ std::ostream& operator<<(std::ostream& output,
 // complete definition for the linked list node
 template <typename Type1, typename Type2>
 struct LinkedNode {
-  LinkedNode* next = nullptr;
-
+  LinkedNode<Type1, Type2>* next = nullptr;
   Type1 key;
   Type2 value;
 
+  // constructor and destructors
   LinkedNode() = default;
   LinkedNode(Type1 key, Type2 value);
 
+  // overloaded operators
   bool operator==(const LinkedNode<Type1, Type2>& node);
   friend std::ostream& operator<<<>(std::ostream& output,
                                     const LinkedNode& node);
 };
 
+/**
+ * Constructor that takes in a key and value pair for the LinkedNode 
+ * @param key - key for the node 
+ * @param value - value for the node 
+ */
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2>::LinkedNode(Type1 key, Type2 value) {
   this->key = key;
   this->value = value;
 }
 
+/** 
+ * Overloaded the output stream operator by placing node into output stream
+ * @param output - a reference to an output stream
+ * @param node - a constant reference to a node to be placed into the stream
+ * 
+ * @return - the reference output stream taken as a parameter 
+ */
 template <typename Type1, typename Type2>
 std::ostream& operator<<(std::ostream& output,
                          const LinkedNode<Type1, Type2>& node) {
@@ -41,6 +54,12 @@ std::ostream& operator<<(std::ostream& output,
   return output;
 }
 
+/**
+ * Overloaded the equivelance operator by comparing the key and value 
+ * @param node - a constant reference to a node to be compared to
+ * 
+ * @return - boolean if the nodes are equal 
+ */
 template <typename Type1, typename Type2>
 bool LinkedNode<Type1, Type2>::operator==(
     const LinkedNode<Type1, Type2>& node) {
@@ -51,6 +70,8 @@ bool LinkedNode<Type1, Type2>::operator==(
   }
 }
 
+// TODO: Finish this class
+// forward declaration of the linked list and output stream operator
 template <typename Type1, typename Type2>
 class LinkedList;
 
@@ -61,7 +82,7 @@ std::ostream& operator<<(std::ostream& output,
 template <typename Type1, typename Type2>
 class LinkedList {
  private:
-  LinkedNode* head = nullptr;
+  LinkedNode<Type1, Type2>* head = nullptr; 
   size_t size = 0;
 
  public:
