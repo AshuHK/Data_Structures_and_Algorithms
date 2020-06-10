@@ -192,6 +192,9 @@ void LinkedList<Type1, Type2>::add_front(Type1 key, Type2 value) {
   }
 }
 
+/**
+ *
+ */
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
   for (LinkedNode<Type1, Type2>* iterator = head; iterator != nullptr;
@@ -264,14 +267,13 @@ void LinkedList<Type1, Type2>::update_value(Type1 key, Type2 new_value) {
 
 template <typename Type1, typename Type2>
 void LinkedList<Type1, Type2>::update_key(Type1 new_key, Type2 value) {
-  LinkedNode<Type1, Type2>* iterator = head; 
+  LinkedNode<Type1, Type2>* iterator = head;
   while (iterator != nullptr) {
     if (iterator->value == value) {
-      break; 
+      break;
     }
   }
-
-  iterator->key = new_key; 
+  iterator->key = new_key;
 }
 
 /**
