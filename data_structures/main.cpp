@@ -71,17 +71,30 @@ int main() {
   list.add_back("Dev", 9875);
   list.add_front("Dad", 5555);
   list.add_front("Mom", -1111);
+  std::cout << list << std::endl << std::endl; 
 
+  // std::cout << list.remove_back() << std::endl; 
+  // std::cout << list.remove_back() << std::endl; 
+  // std::cout << list.remove_back() << std::endl; 
+  // std::cout << list.remove_back() << std::endl; 
+
+  std::cout << list.remove_front() << std::endl; 
+  std::cout << list.remove_front() << std::endl; 
+  std::cout << list.remove_front() << std::endl; 
+  std::cout << list.remove_front() << std::endl; 
+
+  // should print a blank node here cuz there's nothing left to remove
+  // std::cout << list.remove_back() << std::endl; 
+  std::cout << list.remove_front() << std::endl; 
+
+  std::cout << list << std::endl;  
+
+  LinkedNode<std::string, int> * head = list.get_head(); 
+  if (head == nullptr) {
+    std::cout << std::endl << "nullptr. Can't be dereferenced" << std::endl;  
+  } else {
+    std::cout << std::endl << *head << std::endl; 
+  }
   std::cout << list.get_size() << std::endl;
-  std::cout << *(list.get_head()) << std::endl;
-
-  LinkedNode<std::string, int>* node = list.search("Ashu");
-  std::cout << *node << std::endl; 
-
-  // finish these two functions 
-  std::cout << list.remove_back() << std::endl; 
-  std::cout << list << std::endl; 
-  // list.remove_front(); 
-
   return 0;
 }

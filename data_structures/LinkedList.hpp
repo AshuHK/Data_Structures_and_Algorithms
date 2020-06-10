@@ -102,8 +102,8 @@ class LinkedList {
 
   LinkedNode<Type1, Type2>* search(Type1 key);
 
-  LinkedNode<Type1, Type2> remove_front();
   LinkedNode<Type1, Type2> remove_back();
+  LinkedNode<Type1, Type2> remove_front();
 
   void update_value(Type1 key, Type2 new_value);
   void update_key(Type1 new_key, Type2 value);
@@ -203,9 +203,53 @@ LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
   return nullptr;
 }
 
-template <typename Type1, typename Type2> 
+template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_back() {
-  
+  if (size != 0) {
+
+    if(head->next == nullptr){
+      Type1 removed_key = head->key; 
+      Type2 removed_value = head->value; 
+
+      head = nullptr; 
+      delete head; 
+      size--; 
+      return LinkedNode<Type1, Type2>(removed_key, removed_value); 
+    }
+
+    LinkedNode<Type1, Type2>* second_last = head; 
+    while (second_last->next->next != nullptr){
+      second_last = second_last->next; 
+    }
+
+    Type1 removed_key = second_last->next->key; 
+    Type2 removed_value = second_last->next->value; 
+
+    second_last->next = nullptr; 
+    delete second_last->next; 
+    size--; 
+
+    return LinkedNode<Type1, Type2>(removed_key, removed_value);
+
+  }
+  return LinkedNode<Type1, Type2>();
+}
+
+template <typename Type1, typename Type2>
+LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_front() {
+  if (size != 0) {
+    LinkedNode<Type1, Type2>* old_node = head;
+
+    Type1 removed_key = old_node->key;
+    Type2 removed_value = old_node->value;
+
+    head = head->next;
+    delete old_node;
+    size--;
+
+    return LinkedNode<Type1, Type2>(removed_key, removed_value);
+  }
+  return LinkedNode<Type1, Type2>();
 }
 
 /**
