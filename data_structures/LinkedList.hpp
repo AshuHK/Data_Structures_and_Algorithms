@@ -193,7 +193,10 @@ void LinkedList<Type1, Type2>::add_front(Type1 key, Type2 value) {
 }
 
 /**
+ * Search for a node in the list with a specific key
+ * @param key - key to be searched for in the linked list
  *
+ * @return - pointer to the node within the linked list
  */
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
@@ -206,6 +209,12 @@ LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
   return nullptr;
 }
 
+/**
+ * Returns and removes the last node in the linked list
+ * @param None
+ *
+ * @return - a copy of the removed node in the linked list
+ */
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_back() {
   if (size != 0) {
@@ -236,6 +245,12 @@ LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_back() {
   return LinkedNode<Type1, Type2>();
 }
 
+/**
+ * Returns and removes the first node in the linked list
+ * @param None
+ *
+ * @return - a copy of the removed node in the linked list
+ */
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_front() {
   if (size != 0) {
@@ -253,6 +268,13 @@ LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_front() {
   return LinkedNode<Type1, Type2>();
 }
 
+/**
+ * Updates the value for a specific key in the linked list
+ * @param key - key of Type1 to be searched
+ * @param new_value - the value that will replace the value for key
+ *
+ * @return - None
+ */
 template <typename Type1, typename Type2>
 void LinkedList<Type1, Type2>::update_value(Type1 key, Type2 new_value) {
   LinkedNode<Type1, Type2>* iterator = head;
@@ -265,6 +287,13 @@ void LinkedList<Type1, Type2>::update_value(Type1 key, Type2 new_value) {
   iterator->value = new_value;
 }
 
+/**
+ * Updates the key for a specific value in the linked list
+ * @param key - the key that will replace the key for the value
+ * @param value - value of Type2 to be searched
+ *
+ * @param None
+ */
 template <typename Type1, typename Type2>
 void LinkedList<Type1, Type2>::update_key(Type1 new_key, Type2 value) {
   LinkedNode<Type1, Type2>* iterator = head;
