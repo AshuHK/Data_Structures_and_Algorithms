@@ -39,7 +39,7 @@ void test_stack() {
   }
 }
 
-void test_linkednode() {
+void test_linked_node() {
   LinkedNode<std::string, int> node1;
   node1.key = "Ashu";
   node1.value = 5555;
@@ -61,40 +61,44 @@ void test_linkednode() {
   std::cout << node1.key << " " << node1.value << std::endl;
 }
 
-int main() {
-  // test_queue();
-  // test_stack();
-  // test_linkednode();
-
+void test_linked_list() {
   LinkedList<std::string, int> list;
   list.add_back("Ashu", 5423);
   list.add_back("Dev", 9875);
   list.add_front("Dad", 5555);
   list.add_front("Mom", -1111);
-  std::cout << list << std::endl << std::endl; 
+  std::cout << list << std::endl << std::endl;
 
-  // std::cout << list.remove_back() << std::endl; 
-  // std::cout << list.remove_back() << std::endl; 
-  // std::cout << list.remove_back() << std::endl; 
-  // std::cout << list.remove_back() << std::endl; 
+  // std::cout << list.remove_back() << std::endl;
+  // std::cout << list.remove_back() << std::endl;
+  // std::cout << list.remove_back() << std::endl;
+  // std::cout << list.remove_back() << std::endl;
 
-  std::cout << list.remove_front() << std::endl; 
-  std::cout << list.remove_front() << std::endl; 
-  std::cout << list.remove_front() << std::endl; 
-  std::cout << list.remove_front() << std::endl; 
+  std::cout << list.remove_front() << std::endl;
+  std::cout << list.remove_front() << std::endl;
+  std::cout << list.remove_front() << std::endl;
+  std::cout << list.remove_front() << std::endl;
 
   // should print a blank node here cuz there's nothing left to remove
-  // std::cout << list.remove_back() << std::endl; 
-  std::cout << list.remove_front() << std::endl; 
+  // std::cout << list.remove_back() << std::endl;
+  std::cout << list.remove_front() << std::endl;
 
-  std::cout << list << std::endl;  
+  std::cout << list << std::endl;
 
-  LinkedNode<std::string, int> * head = list.get_head(); 
+  LinkedNode<std::string, int>* head = list.get_head();
   if (head == nullptr) {
-    std::cout << std::endl << "nullptr. Can't be dereferenced" << std::endl;  
+    std::cout << std::endl << "nullptr. Can't be dereferenced" << std::endl;
   } else {
-    std::cout << std::endl << *head << std::endl; 
+    std::cout << std::endl << *head << std::endl;
   }
   std::cout << list.get_size() << std::endl;
+}
+
+int main() {
+  // test_queue();
+  // test_stack();
+  // test_linked_node();
+  // test_linked_list(); 
+
   return 0;
 }
