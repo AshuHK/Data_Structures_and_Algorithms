@@ -62,18 +62,23 @@ void test_linked_node() {
 }
 
 void test_linked_list() {
-  LinkedList<std::string, int> list;
-  list.add_back("Ashu", 5423);
-  list.add_back("Dev", 9875);
-  list.add_front("Dad", 5555);
-  list.add_front("Mom", -1111);
+
+  std::vector<LinkedNode<std::string, int>> data; 
+  data.push_back(LinkedNode<std::string, int>("Mom", -1111)); 
+  data.push_back(LinkedNode<std::string, int>("Dad", 5555)); 
+  data.push_back(LinkedNode<std::string, int>("Ashu", 5423)); 
+  data.push_back(LinkedNode<std::string, int>("Dev", 9875)); 
+
+  LinkedList<std::string, int> list(data);
   std::cout << list << std::endl << std::endl;
 
+  // comment this block 
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
 
+  // or this block 
   std::cout << list.remove_front() << std::endl;
   std::cout << list.remove_front() << std::endl;
   std::cout << list.remove_front() << std::endl;
@@ -98,7 +103,7 @@ int main() {
   // test_queue();
   // test_stack();
   // test_linked_node();
-  // test_linked_list(); 
+  test_linked_list(); 
 
   return 0;
 }
