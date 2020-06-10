@@ -206,31 +206,29 @@ LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
 template <typename Type1, typename Type2>
 LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_back() {
   if (size != 0) {
+    if (head->next == nullptr) {
+      Type1 removed_key = head->key;
+      Type2 removed_value = head->value;
 
-    if(head->next == nullptr){
-      Type1 removed_key = head->key; 
-      Type2 removed_value = head->value; 
-
-      head = nullptr; 
-      delete head; 
-      size--; 
-      return LinkedNode<Type1, Type2>(removed_key, removed_value); 
+      head = nullptr;
+      delete head;
+      size--;
+      return LinkedNode<Type1, Type2>(removed_key, removed_value);
     }
 
-    LinkedNode<Type1, Type2>* second_last = head; 
-    while (second_last->next->next != nullptr){
-      second_last = second_last->next; 
+    LinkedNode<Type1, Type2>* second_last = head;
+    while (second_last->next->next != nullptr) {
+      second_last = second_last->next;
     }
 
-    Type1 removed_key = second_last->next->key; 
-    Type2 removed_value = second_last->next->value; 
+    Type1 removed_key = second_last->next->key;
+    Type2 removed_value = second_last->next->value;
 
-    second_last->next = nullptr; 
-    delete second_last->next; 
-    size--; 
+    second_last->next = nullptr;
+    delete second_last->next;
+    size--;
 
     return LinkedNode<Type1, Type2>(removed_key, removed_value);
-
   }
   return LinkedNode<Type1, Type2>();
 }
