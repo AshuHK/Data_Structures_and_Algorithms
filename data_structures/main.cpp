@@ -72,6 +72,8 @@ void test_linked_list() {
   LinkedList<std::string, int> list(data);
   std::cout << list << std::endl << std::endl;
 
+  list.update_value("Ashu", -69696); 
+  list.update_key("Birth giver", -1111); 
   // comment this block 
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
@@ -79,14 +81,14 @@ void test_linked_list() {
   // std::cout << list.remove_back() << std::endl;
 
   // or this block 
-  std::cout << list.remove_front() << std::endl;
-  std::cout << list.remove_front() << std::endl;
-  std::cout << list.remove_front() << std::endl;
-  std::cout << list.remove_front() << std::endl;
+  // std::cout << list.remove_front() << std::endl;
+  // std::cout << list.remove_front() << std::endl;
+  // std::cout << list.remove_front() << std::endl;
+  // std::cout << list.remove_front() << std::endl;
 
   // should print a blank node here cuz there's nothing left to remove
   // std::cout << list.remove_back() << std::endl;
-  std::cout << list.remove_front() << std::endl;
+  // std::cout << list.remove_front() << std::endl;
 
   std::cout << list << std::endl;
 

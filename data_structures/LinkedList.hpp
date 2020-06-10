@@ -250,6 +250,30 @@ LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_front() {
   return LinkedNode<Type1, Type2>();
 }
 
+template <typename Type1, typename Type2>
+void LinkedList<Type1, Type2>::update_value(Type1 key, Type2 new_value) {
+  LinkedNode<Type1, Type2>* iterator = head;
+  while (iterator != nullptr) {
+    if (iterator->key == key) {
+      break;
+    }
+    iterator = iterator->next;
+  }
+  iterator->value = new_value;
+}
+
+template <typename Type1, typename Type2>
+void LinkedList<Type1, Type2>::update_key(Type1 new_key, Type2 value) {
+  LinkedNode<Type1, Type2>* iterator = head; 
+  while (iterator != nullptr) {
+    if (iterator->value == value) {
+      break; 
+    }
+  }
+
+  iterator->key = new_key; 
+}
+
 /**
  * Overloads the << operator and puts the linked list into the output stream
  * @param output - a reference to an output stream
