@@ -79,8 +79,9 @@ int main() {
   std::cout << *node << std::endl; 
 
   // finish these two functions 
-  list.remove_back(); 
-  list.remove_front(); 
+  std::cout << list.remove_back() << std::endl; 
+  std::cout << list << std::endl; 
+  // list.remove_front(); 
 
   return 0;
 }

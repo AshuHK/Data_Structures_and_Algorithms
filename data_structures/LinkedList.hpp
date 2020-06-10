@@ -203,6 +203,11 @@ LinkedNode<Type1, Type2>* LinkedList<Type1, Type2>::search(Type1 key) {
   return nullptr;
 }
 
+template <typename Type1, typename Type2> 
+LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_back() {
+  
+}
+
 /**
  * Overloads the << operator and puts the linked list into the output stream
  * @param output - a reference to an output stream
