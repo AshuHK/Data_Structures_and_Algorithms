@@ -72,8 +72,7 @@ void test_linked_list() {
   LinkedList<std::string, int> list(data);
   std::cout << list << std::endl << std::endl;
 
-  list.update_value("Ashu", -69696); 
-  list.update_key("Birth giver", -1111); 
+  list.update("Ashu", 2222);
   // comment this block 
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
@@ -101,11 +100,18 @@ void test_linked_list() {
   std::cout << list.get_size() << std::endl;
 }
 
+void test_hash_table() {
+
+}
+
 int main() {
   // test_queue();
   // test_stack();
   // test_linked_node();
   test_linked_list(); 
+
+  // TODO work on hash tables 
+  test_hash_table(); 
 
   return 0;
 }

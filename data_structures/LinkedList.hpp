@@ -105,8 +105,7 @@ class LinkedList {
   LinkedNode<Type1, Type2> remove_back();
   LinkedNode<Type1, Type2> remove_front();
 
-  void update_value(Type1 key, Type2 new_value);
-  void update_key(Type1 new_key, Type2 value);
+  void update(Type1 key, Type2 new_value);
 
   // overloaded operations
   friend std::ostream& operator<<<>(std::ostream& output,
@@ -270,13 +269,13 @@ LinkedNode<Type1, Type2> LinkedList<Type1, Type2>::remove_front() {
 
 /**
  * Updates the value for a specific key in the linked list
- * @param key - key of Type1 to be searched
+ * @param key - key to be searched
  * @param new_value - the value that will replace the value for key
  *
  * @return - None
  */
 template <typename Type1, typename Type2>
-void LinkedList<Type1, Type2>::update_value(Type1 key, Type2 new_value) {
+void LinkedList<Type1, Type2>::update(Type1 key, Type2 new_value) {
   LinkedNode<Type1, Type2>* iterator = head;
   while (iterator != nullptr) {
     if (iterator->key == key) {
@@ -285,24 +284,6 @@ void LinkedList<Type1, Type2>::update_value(Type1 key, Type2 new_value) {
     iterator = iterator->next;
   }
   iterator->value = new_value;
-}
-
-/**
- * Updates the key for a specific value in the linked list
- * @param key - the key that will replace the key for the value
- * @param value - value of Type2 to be searched
- *
- * @param None
- */
-template <typename Type1, typename Type2>
-void LinkedList<Type1, Type2>::update_key(Type1 new_key, Type2 value) {
-  LinkedNode<Type1, Type2>* iterator = head;
-  while (iterator != nullptr) {
-    if (iterator->value == value) {
-      break;
-    }
-  }
-  iterator->key = new_key;
 }
 
 /**
