@@ -1,6 +1,4 @@
 #include <iostream>
-#include <sstream>
-#include <string>
 #include <vector>
 
 #ifndef LINKEDLIST_HPP
