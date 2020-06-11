@@ -101,14 +101,14 @@ void test_linked_list() {
 }
 
 void test_hash_table() {
-
+  std::cout << "Start working on hash tables" << std::endl; 
 }
 
 int main() {
   // test_queue();
   // test_stack();
   // test_linked_node();
-  test_linked_list(); 
+  // test_linked_list(); 
 
   // TODO work on hash tables 
   test_hash_table(); 
