@@ -131,8 +131,6 @@ int main() {
   // test_stack();
   // test_linked_node();
   // test_linked_list();
-
-  // TODO work on hash tables
   test_hash_table();
 
   return 0;
