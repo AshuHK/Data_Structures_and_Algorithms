@@ -113,16 +113,17 @@ void test_hash_table() {
   hash_table.put(5, "Random Person");
 
   hash_table.output();
+  std::cout << std::endl << "Let's remove the random person";
   hash_table.remove(5);
   std::cout << std::endl;
 
   hash_table.output();
 
-  std::cout << hash_table.get(1) << std::endl;
-  
+  std::cout << std::endl << "Searching by key" << std::endl;
+  std::cout << "Key 1: " << hash_table.get(1) << std::endl;
+
   // will cause a seg fault if the key is not in the hash table
   // std::cout << hash_table.get(5) << std::endl;
-
 }
 
 int main() {
