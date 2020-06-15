@@ -212,7 +212,10 @@ class HashTable {
   }
 
  private:
+  // an array of pointers allocated to the table size
   HashNode<Type1, Type2>* table[table_size];
+
+  // the hash function pulled from the struct
   Type3 hash_function;
 };
 
