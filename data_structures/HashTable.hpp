@@ -9,7 +9,7 @@ class HashNode {
  public:
   // basic constructor with key and value pair
   HashNode(Type1 key, Type2 value);
-  
+
   // setters and getters
   Type1 get_key();
   Type2 get_value();
@@ -21,13 +21,12 @@ class HashNode {
   Type1 key;
   Type2 value;
   HashNode* next = nullptr;
-
 };
 
 /**
  * Constructor taking in a key and value
- * @param key - a key to set the node to 
- * @param value - a value to set the node to 
+ * @param key - a key to set the node to
+ * @param value - a value to set the node to
  */
 template <typename Type1, typename Type2>
 HashNode<Type1, Type2>::HashNode<Type1, Type2>(Type1 key, Type2 value) {
@@ -36,10 +35,10 @@ HashNode<Type1, Type2>::HashNode<Type1, Type2>(Type1 key, Type2 value) {
 }
 
 /**
- * Returns the key of the node 
- * @param None 
- * 
- * @return - the key of the node 
+ * Returns the key of the node
+ * @param None
+ *
+ * @return - the key of the node
  */
 template <typename Type1, typename Type2>
 Type1 HashNode<Type1, Type2>::get_key() {
@@ -47,10 +46,10 @@ Type1 HashNode<Type1, Type2>::get_key() {
 }
 
 /**
- * Returns the value of the node 
- * @param None 
- * 
- * @return - the value of the node 
+ * Returns the value of the node
+ * @param None
+ *
+ * @return - the value of the node
  */
 template <typename Type1, typename Type2>
 Type2 HashNode<Type1, Type2>::get_value() {
@@ -58,10 +57,10 @@ Type2 HashNode<Type1, Type2>::get_value() {
 }
 
 /**
- * Sets the value of the node to a new value 
- * @param value - the new value to set the node to 
- * 
- * @return - None 
+ * Sets the value of the node to a new value
+ * @param value - the new value to set the node to
+ *
+ * @return - None
  */
 template <typename Type1, typename Type2>
 void HashNode<Type1, Type2>::set_value(Type2 value) {
@@ -69,10 +68,10 @@ void HashNode<Type1, Type2>::set_value(Type2 value) {
 }
 
 /**
- * Returns the next node in the hash table 
- * @param None 
- * 
- * @return - a pointer to the next node in the hash table 
+ * Returns the next node in the hash table
+ * @param None
+ *
+ * @return - a pointer to the next node in the hash table
  */
 template <typename Type1, typename Type2>
 HashNode<Type1, Type2>* HashNode<Type1, Type2>::get_next() {
@@ -80,9 +79,9 @@ HashNode<Type1, Type2>* HashNode<Type1, Type2>::get_next() {
 }
 
 /**
- * Sets next node in the hashtable to a new node 
- * @param next - a pointer to a hash node 
- * 
+ * Sets next node in the hashtable to a new node
+ * @param next - a pointer to a hash node
+ *
  * @return - None
  */
 template <typename Type1, typename Type2>
