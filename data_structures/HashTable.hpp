@@ -103,59 +103,61 @@ class HashTable {
   HashTable() : table(), hash_function() {}
 
   ~HashTable() {
-    for(size_t i = 0; i < table_size; ++i) {
-      HashNode<Type1, Type2> * entry = table[i]; 
+    for (size_t i = 0; i < table_size; ++i) {
+      HashNode<Type1, Type2>* entry = table[i];
 
-      while(entry != nullptr) {
-        HashNode<Type1, Type2> * prev = entry; 
-        entry = entry->get_next(); 
-        delete prev; 
+      while (entry != nullptr) {
+        HashNode<Type1, Type2>* prev = entry;
+        entry = entry->get_next();
+        delete prev;
       }
 
-      table[i] = nullptr; 
+      table[i] = nullptr;
     }
-  } 
+  }
 
-  bool get(Type1 key, Type2 value){
-    unsigned long hash_value = hash_function(key); 
-    HashNode<Type1, Type2> * entry = table[hash_value]; 
+  bool get(Type1 key, Type2 value) {
+    unsigned long hash_value = hash_function(key);
+    HashNode<Type1, Type2>* entry = table[hash_value];
 
-    while(entry != nullptr) {
-      if(entry->get_key() == key) {
-        value = entry->get_value(); 
-        return true; 
+    while (entry != nullptr) {
+      if (entry->get_key() == key) {
+        value = entry->get_value();
+        return true;
       }
-      entry = entry->get_next(); 
+      entry = entry->get_next();
     }
 
-    return false; 
+    return false;
   }
 
   void put(Type1 key, Type2 value) {
-    unsigned long hash_value = hash_function(key); 
-    HashNode<Type1, Type2> * prev = nullptr; 
-    HashNode<Type1, Type2> * entry = table[hash_value]; 
- 
+    unsigned long hash_value = hash_function(key);
+    HashNode<Type1, Type2>* prev = nullptr;
+    HashNode<Type1, Type2>* entry = table[hash_value];
+
     while (entry != nullptr && entry->get_key() != key) {
-      prev = entry; 
-      entry = entry->get_next(); 
+      prev = entry;
+      entry = entry->get_next();
     }
 
     if (entry == nullptr) {
-      entry = new HashNode<Type1, Type2>(key, value); 
+      entry = new HashNode<Type1, Type2>(key, value);
 
-      if(prev == nullptr) {
-        table[hash_value] = entry; 
+      if (prev == nullptr) {
+        table[hash_value] = entry;
       } else {
-        prev->set_next(entry); 
+        prev->set_next(entry);
       }
     } else {
-      entry->set_value(value); 
+      entry->set_value(value);
     }
   }
 
   void remove(Type1 key) {
-    
+    unsigned long hash_value = hash_function(key);
+    HashNode<Type1, Type2>* prev = nullptr;
+    HashNode<Type1, Type2>* entry = table[hash_value];
   }
 
  private:
