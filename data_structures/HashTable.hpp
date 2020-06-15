@@ -7,6 +7,7 @@
 template <typename Type1, typename Type2>
 class HashNode {
  public:
+  // basic constructor with key and value pair 
   HashNode(const Type1& key, const Type2& value);
 
  private:
