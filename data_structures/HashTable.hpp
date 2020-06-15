@@ -158,6 +158,24 @@ class HashTable {
     unsigned long hash_value = hash_function(key);
     HashNode<Type1, Type2>* prev = nullptr;
     HashNode<Type1, Type2>* entry = table[hash_value];
+
+    while(entry != nullptr && entry->get_key() != key) {
+      prev = entry; 
+      entry = entry->get_next(); 
+    }
+
+    if(entry == nullptr) {
+      // key not found 
+      return; 
+    } else {
+      if (prev == nullptr) {
+        table[hash_value] = entry->get_next(); 
+      } else {
+        prev->set_next(entry->get_next()); 
+      }
+
+      delete entry; 
+    }
   }
 
  private:
