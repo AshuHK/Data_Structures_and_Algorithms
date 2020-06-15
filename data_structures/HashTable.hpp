@@ -32,17 +32,14 @@ HashNode<Type1, Type2>::HashNode<Type1, Type2>(const Type1& key,
   this->value = value;
 }
 
-template <typename Type1, typename Type2> 
+template <typename Type1, typename Type2>
 Type1 HashNode<Type1, Type2>::get_key() {
-  return key; 
+  return key;
 }
 
-template <typename Type1, typename Type2> 
+template <typename Type1, typename Type2>
 Type2 HashNode<Type1, Type2>::get_value() {
-  return value; 
+  return value;
 }
-
-
-
 
 #endif
