@@ -89,11 +89,17 @@ void HashNode<Type1, Type2>::set_next(HashNode<Type1, Type2>* next) {
   this->next = next;
 }
 
-template <typename Type1, size_t table_size> 
+template <typename Type1, size_t table_size>
 struct KeyHash {
-  unsigned long operator()(const Type1 & key) const {
-    return reinterpret_cast<unsigned long>(key) % table_size; 
+  unsigned long operator()(const Type1& key) const {
+    return reinterpret_cast<unsigned long>(key) % table_size;
   }
-}; 
+};
+
+template <typename Type1, typename Type2, size_t table_size,
+          typename Type3 = KeyHash<Type1, table_size>>
+class HashTable {
+  
+};
 
 #endif
