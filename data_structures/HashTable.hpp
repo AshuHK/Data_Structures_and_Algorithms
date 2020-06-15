@@ -175,9 +175,9 @@ class HashTable {
       HashNode<Type1, Type2>* entry = table[i];
 
       while (entry != nullptr) {
-        HashNode<Type1, Type2>* prev = entry;
+        std::cout << entry->get_key() << " : " << entry->get_value()
+                  << std::endl;
         entry = entry->get_next();
-        std::cout << entry->get_key() << " : " << entry->get_value() << std::endl; 
       }
     }
   }
