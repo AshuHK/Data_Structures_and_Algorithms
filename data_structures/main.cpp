@@ -62,24 +62,23 @@ void test_linked_node() {
 }
 
 void test_linked_list() {
-
-  std::vector<LinkedNode<std::string, int>> data; 
-  data.push_back(LinkedNode<std::string, int>("Mom", -1111)); 
-  data.push_back(LinkedNode<std::string, int>("Dad", 5555)); 
-  data.push_back(LinkedNode<std::string, int>("Ashu", 5423)); 
-  data.push_back(LinkedNode<std::string, int>("Dev", 9875)); 
+  std::vector<LinkedNode<std::string, int>> data;
+  data.push_back(LinkedNode<std::string, int>("Mom", -1111));
+  data.push_back(LinkedNode<std::string, int>("Dad", 5555));
+  data.push_back(LinkedNode<std::string, int>("Ashu", 5423));
+  data.push_back(LinkedNode<std::string, int>("Dev", 9875));
 
   LinkedList<std::string, int> list(data);
   std::cout << list << std::endl << std::endl;
 
   list.update("Ashu", 2222);
-  // comment this block 
+  // comment this block
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
   // std::cout << list.remove_back() << std::endl;
 
-  // or this block 
+  // or this block
   // std::cout << list.remove_front() << std::endl;
   // std::cout << list.remove_front() << std::endl;
   // std::cout << list.remove_front() << std::endl;
@@ -101,17 +100,22 @@ void test_linked_list() {
 }
 
 void test_hash_table() {
-  std::cout << "Start working on hash tables" << std::endl; 
+  std::cout << "You should really learn how to make a hash table in C++"
+            << std::endl;
+  std::cout << "Ideally, make it with double hashing but if you can't do "
+               "chaining cuz it's basically a linked list rather than probing "
+               "cuz probing is whack."
+            << std::endl;
 }
 
 int main() {
   // test_queue();
   // test_stack();
   // test_linked_node();
-  // test_linked_list(); 
+  // test_linked_list();
 
-  // TODO work on hash tables 
-  test_hash_table(); 
+  // TODO work on hash tables
+  test_hash_table();
 
   return 0;
 }
