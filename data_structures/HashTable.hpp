@@ -170,7 +170,7 @@ class HashTable {
     }
   }
 
-  void print() {
+  void output() {
     for (size_t i = 0; i < table_size; ++i) {
       HashNode<Type1, Type2>* entry = table[i];
 

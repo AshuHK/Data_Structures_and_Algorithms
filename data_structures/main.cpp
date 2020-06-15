@@ -112,7 +112,10 @@ void test_hash_table() {
   hash_table.put(4, "value4");
 
   std::cout << "Entries complete" << std::endl;
-  hash_table.print(); 
+  hash_table.output(); 
+  hash_table.remove(2); 
+  std::cout << std::endl; 
+  hash_table.output(); 
 }
 
 int main() {
