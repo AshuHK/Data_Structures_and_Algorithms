@@ -108,19 +108,18 @@ class HashTable {
     }
   }
 
-  bool get(Type1 key, Type2 value) {
+  Type2 get(Type1 key) {
     unsigned long hash_value = hash_function(key);
     HashNode<Type1, Type2>* entry = table[hash_value];
 
     while (entry != nullptr) {
       if (entry->get_key() == key) {
-        value = entry->get_value();
-        return true;
+        return entry->get_value(); 
       }
       entry = entry->get_next();
     }
 
-    return false;
+    return NULL;
   }
 
   void put(Type1 key, Type2 value) {

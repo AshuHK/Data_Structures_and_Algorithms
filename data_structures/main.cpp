@@ -106,16 +106,23 @@ void test_linked_list() {
 
 void test_hash_table() {
   HashTable<int, std::string, 100, MyKeyHash> hash_table;
-  hash_table.put(1, "value1");
-  hash_table.put(2, "value2");
-  hash_table.put(3, "value3");
-  hash_table.put(4, "value4");
+  hash_table.put(3, "Mom");
+  hash_table.put(2, "Dev");
+  hash_table.put(1, "Ashu");
+  hash_table.put(4, "Dad");
+  hash_table.put(5, "Random Person");
 
-  std::cout << "Entries complete" << std::endl;
-  hash_table.output(); 
-  hash_table.remove(2); 
-  std::cout << std::endl; 
-  hash_table.output(); 
+  hash_table.output();
+  hash_table.remove(5);
+  std::cout << std::endl;
+
+  hash_table.output();
+
+  std::cout << hash_table.get(1) << std::endl;
+  
+  // will cause a seg fault if the key is not in the hash table
+  // std::cout << hash_table.get(5) << std::endl;
+
 }
 
 int main() {
