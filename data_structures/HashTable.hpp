@@ -170,17 +170,16 @@ class HashTable {
     }
   }
 
-  std::ostream& operator<<(std::ostream& output) {
+  void print() {
     for (size_t i = 0; i < table_size; ++i) {
       HashNode<Type1, Type2>* entry = table[i];
 
       while (entry != nullptr) {
         HashNode<Type1, Type2>* prev = entry;
         entry = entry->get_next();
-        output << entry->get_key() << " : " << entry->get_value(); 
+        std::cout << entry->get_key() << " : " << entry->get_value() << std::endl; 
       }
     }
-    return output;
   }
 
  private:
