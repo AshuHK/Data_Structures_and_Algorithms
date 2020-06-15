@@ -180,7 +180,6 @@ class HashTable {
         output << entry->get_key() << " : " << entry->get_value(); 
       }
     }
-
     return output;
   }
 
