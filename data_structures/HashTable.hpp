@@ -42,4 +42,19 @@ Type2 HashNode<Type1, Type2>::get_value() {
   return value;
 }
 
+template <typename Type1, typename Type2>
+void HashNode<Type1, Type2>::set_value(Type2 value) {
+  this->value = value;
+}
+
+template <typename Type1, typename Type2>
+HashNode<Type1, Type2>* HashNode<Type1, Type2>::get_next() {
+  return next;
+}
+
+template <typename Type1, typename Type2>
+void HashNode<Type1, Type2>::set_next(HashNode<Type1, Type2>* next) {
+  this->next = next;
+}
+
 #endif
