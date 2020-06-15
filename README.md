@@ -13,7 +13,7 @@ Some of the data structures included:
       - enqueue
       - dequeue
   - Linked Lists (done)
-    - Operations
+    - Operations:
       - get_head
       - add_back
       - add_front
@@ -23,8 +23,8 @@ Some of the data structures included:
       - update_value
       - update_key
   - Hash Tables (done)
-    - Operations
+    - Operations:
       - put
       - get
-      - remove 
+      - remove
       - output (meant to replaced overloaded << operator)
