@@ -107,9 +107,9 @@ void test_linked_list() {
 void test_hash_table() {
   HashTable<int, std::string, 100, MyKeyHash> hash_table;
   hash_table.put(1, "value1");
-  hash_table.put(1, "value1");
-  hash_table.put(1, "value1");
-  hash_table.put(1, "value1");
+  hash_table.put(2, "value2");
+  hash_table.put(3, "value3");
+  hash_table.put(4, "value4");
 
   std::cout << "Entries complete" << std::endl;
   hash_table.print(); 
