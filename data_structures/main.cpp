@@ -3,9 +3,14 @@
 #include <string>
 #include <vector>
 
+#include "HashTable.hpp"
 #include "LinkedList.hpp"
 #include "Queue.hpp"
 #include "Stack.hpp"
+
+struct MyKeyHash {
+  unsigned long operator()(const int& key) const { return key % 10; }
+};
 
 void test_queue() {
   Queue<int> queue(10);
@@ -100,7 +105,11 @@ void test_linked_list() {
 }
 
 void test_hash_table() {
-  
+  HashTable<int, std::string, 100, MyKeyHash> hash_table;
+  hash_table.put(1, "value1");
+  hash_table.put(1, "value1");
+  hash_table.put(1, "value1");
+  hash_table.put(1, "value1");
 }
 
 int main() {

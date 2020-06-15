@@ -99,7 +99,33 @@ struct KeyHash {
 template <typename Type1, typename Type2, size_t table_size,
           typename Type3 = KeyHash<Type1, table_size>>
 class HashTable {
-  
+ public:
+  HashTable() : table(), hash_function() {}
+
+  ~HashTable() {
+    for(size_t i = 0; i < table_size; ++i) {
+      HashNode<Type1, Type2> * entry = table[i]; 
+
+      while(entry != nullptr) {
+        HashNode<Type1, Type2> * prev = entry; 
+        entry = entry->get_next(); 
+        delete prev; 
+      }
+
+      table[i] = nullptr; 
+    }
+  } 
+
+  bool get(Type1 key, Type2 value){
+    unsigned long hash_value = hash_function(key); 
+    HashNode<Type1, Type2> * entry = table[hash_value]; 
+
+    while(entry != nullptr) {
+      
+    }
+  }
+
+ private:
 };
 
 #endif
