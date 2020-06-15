@@ -3,7 +3,6 @@
 
 #ifndef HASHTABLE_HPP
 #define HASHTABLE_HPP
-#define TABLE_SIZE 100
 
 template <typename Type1, typename Type2>
 class HashNode {
@@ -90,10 +89,10 @@ void HashNode<Type1, Type2>::set_next(HashNode<Type1, Type2>* next) {
   this->next = next;
 }
 
-template <typename Type1> 
+template <typename Type1, size_t table_size> 
 struct KeyHash {
   unsigned long operator()(const Type1 & key) const {
-    return reinterpret_cast<unsigned long>(key) % TABLE_SIZE; 
+    return reinterpret_cast<unsigned long>(key) % table_size; 
   }
 }; 
 
