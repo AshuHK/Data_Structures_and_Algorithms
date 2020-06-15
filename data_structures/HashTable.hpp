@@ -81,6 +81,7 @@ void HashNode<Type1, Type2>::set_next(HashNode<Type1, Type2>* next) {
   this->next = next;
 }
 
+// basic hash function as a struct to generate indicies
 template <typename Type1, size_t table_size>
 struct KeyHash {
   unsigned long operator()(const Type1& key) const {
@@ -92,8 +93,12 @@ template <typename Type1, typename Type2, size_t table_size,
           typename Type3 = KeyHash<Type1, table_size>>
 class HashTable {
  public:
+  // default constructor
   HashTable() : table(), hash_function() {}
 
+  /**
+   * Destructor that goes through each pointer and delete each of them
+   */
   ~HashTable() {
     for (size_t i = 0; i < table_size; ++i) {
       HashNode<Type1, Type2>* entry = table[i];
@@ -108,13 +113,19 @@ class HashTable {
     }
   }
 
+  /**
+   * Gets the value for the specific key
+   * @param key - key to find the matching value for
+   *
+   * @return - the value for the matching key
+   */
   Type2 get(Type1 key) {
     unsigned long hash_value = hash_function(key);
     HashNode<Type1, Type2>* entry = table[hash_value];
 
     while (entry != nullptr) {
       if (entry->get_key() == key) {
-        return entry->get_value(); 
+        return entry->get_value();
       }
       entry = entry->get_next();
     }
@@ -122,6 +133,13 @@ class HashTable {
     return NULL;
   }
 
+  /**
+   * Puts a new key-value pair into the hash table
+   * @param key - key for the new node in the hash table
+   * @param value - value for the new node in the hash table
+   *
+   * @return - None
+   */
   void put(Type1 key, Type2 value) {
     unsigned long hash_value = hash_function(key);
     HashNode<Type1, Type2>* prev = nullptr;
@@ -145,6 +163,12 @@ class HashTable {
     }
   }
 
+  /**
+   * Removes the node with a specific key value
+   * @param key - key of the node to be removed
+   *
+   * @return - None
+   */
   void remove(Type1 key) {
     unsigned long hash_value = hash_function(key);
     HashNode<Type1, Type2>* prev = nullptr;
@@ -169,6 +193,12 @@ class HashTable {
     }
   }
 
+  /**
+   * Outputs all of the key-value pairs in the hash table
+   * @param None
+   *
+   * @return - None
+   */
   void output() {
     for (size_t i = 0; i < table_size; ++i) {
       HashNode<Type1, Type2>* entry = table[i];
