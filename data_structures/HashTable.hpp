@@ -8,7 +8,10 @@ template <typename Type1, typename Type2>
 class HashNode {
  public:
   // basic constructor with key and value pair
-  HashNode(Type1 key, Type2 value);
+  HashNode(Type1 _key, Type2 _value) {
+    key = _key; 
+    value = _value; 
+  }
 
   // setters and getters
   Type1 get_key();
@@ -23,16 +26,6 @@ class HashNode {
   HashNode* next = nullptr;
 };
 
-/**
- * Constructor taking in a key and value
- * @param key - a key to set the node to
- * @param value - a value to set the node to
- */
-template <typename Type1, typename Type2>
-HashNode<Type1, Type2>::HashNode<Type1, Type2>(Type1 key, Type2 value) {
-  this->key = key;
-  this->value = value;
-}
 
 /**
  * Returns the key of the node
@@ -179,6 +172,8 @@ class HashTable {
   }
 
  private:
+  HashNode<Type1, Type2> *table[table_size]; 
+  Type3 hash_function; 
 };
 
 #endif
