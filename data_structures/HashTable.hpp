@@ -9,18 +9,19 @@ class HashNode {
  public:
   // basic constructor with key and value pair
   HashNode(Type1 key, Type2 value);
-
- private:
-  Type1 key;
-  Type2 value;
-  HashNode* next = nullptr;
-
+  
   // setters and getters
   Type1 get_key();
   Type2 get_value();
   void set_value(Type2 value);
   HashNode* get_next();
   void set_next(HashNode<Type1, Type2>* next);
+
+ private:
+  Type1 key;
+  Type2 value;
+  HashNode* next = nullptr;
+
 };
 
 /**
