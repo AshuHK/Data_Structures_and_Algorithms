@@ -100,12 +100,7 @@ void test_linked_list() {
 }
 
 void test_hash_table() {
-  std::cout << "You should really learn how to make a hash table in C++"
-            << std::endl;
-  std::cout << "Ideally, make it with double hashing but if you can't do "
-               "chaining cuz it's basically a linked list rather than probing "
-               "cuz probing is whack."
-            << std::endl;
+  
 }
 
 int main() {
