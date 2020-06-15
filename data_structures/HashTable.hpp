@@ -121,8 +121,41 @@ class HashTable {
     HashNode<Type1, Type2> * entry = table[hash_value]; 
 
     while(entry != nullptr) {
-      
+      if(entry->get_key() == key) {
+        value = entry->get_value(); 
+        return true; 
+      }
+      entry = entry->get_next(); 
     }
+
+    return false; 
+  }
+
+  void put(Type1 key, Type2 value) {
+    unsigned long hash_value = hash_function(key); 
+    HashNode<Type1, Type2> * prev = nullptr; 
+    HashNode<Type1, Type2> * entry = table[hash_value]; 
+ 
+    while (entry != nullptr && entry->get_key() != key) {
+      prev = entry; 
+      entry = entry->get_next(); 
+    }
+
+    if (entry == nullptr) {
+      entry = new HashNode<Type1, Type2>(key, value); 
+
+      if(prev == nullptr) {
+        table[hash_value] = entry; 
+      } else {
+        prev->set_next(entry); 
+      }
+    } else {
+      entry->set_value(value); 
+    }
+  }
+
+  void remove(Type1 key) {
+    
   }
 
  private:
