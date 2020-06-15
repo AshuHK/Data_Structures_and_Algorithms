@@ -9,8 +9,8 @@ class HashNode {
  public:
   // basic constructor with key and value pair
   HashNode(Type1 _key, Type2 _value) {
-    key = _key; 
-    value = _value; 
+    key = _key;
+    value = _value;
   }
 
   // setters and getters
@@ -25,7 +25,6 @@ class HashNode {
   Type2 value;
   HashNode* next = nullptr;
 };
-
 
 /**
  * Returns the key of the node
@@ -152,28 +151,28 @@ class HashTable {
     HashNode<Type1, Type2>* prev = nullptr;
     HashNode<Type1, Type2>* entry = table[hash_value];
 
-    while(entry != nullptr && entry->get_key() != key) {
-      prev = entry; 
-      entry = entry->get_next(); 
+    while (entry != nullptr && entry->get_key() != key) {
+      prev = entry;
+      entry = entry->get_next();
     }
 
-    if(entry == nullptr) {
-      // key not found 
-      return; 
+    if (entry == nullptr) {
+      // key not found
+      return;
     } else {
       if (prev == nullptr) {
-        table[hash_value] = entry->get_next(); 
+        table[hash_value] = entry->get_next();
       } else {
-        prev->set_next(entry->get_next()); 
+        prev->set_next(entry->get_next());
       }
 
-      delete entry; 
+      delete entry;
     }
   }
 
  private:
-  HashNode<Type1, Type2> *table[table_size]; 
-  Type3 hash_function; 
+  HashNode<Type1, Type2>* table[table_size];
+  Type3 hash_function;
 };
 
 #endif
