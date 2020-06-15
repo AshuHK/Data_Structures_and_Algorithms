@@ -22,6 +22,9 @@ Some of the data structures included:
       - remove_front
       - update_value
       - update_key
-  _ Hash Tables
-  - Heaps
-  - Trees
+  - Hash Tables (done)
+    - Operations
+      - put
+      - get
+      - remove 
+      - output (meant to replaced overloaded << operator)
