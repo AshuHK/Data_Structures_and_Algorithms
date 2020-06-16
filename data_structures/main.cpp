@@ -127,10 +127,10 @@ void test_hash_table() {
 }
 
 int main() {
-  // test_queue();
-  // test_stack();
-  // test_linked_node();
-  // test_linked_list();
+  test_queue();
+  test_stack();
+  test_linked_node();
+  test_linked_list();
   test_hash_table();
 
   return 0;
